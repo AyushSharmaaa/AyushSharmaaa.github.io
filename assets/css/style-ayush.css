@@ -35,6 +35,27 @@
   --danger: #ec185d;
   --light: #f8f9fa;
   --dark: #212529;
+  --box-blue: #2c5eff;
+  --box-light-blue: #40a0ff;
+  --box-green: #38a538;
+  --box-bg: #ffffff;
+  --box-border: #f0f0f0;
+  --primary-blue-text: #2c5eff; /* For "TECHNICAL ARSENAL" and main icons */
+  --section-bg: transparent; /* Removed light blue background */
+  --card-bg: #ffffff; /* White background for cards */
+  --card-border: #e0e6f6; /* Light blue border for cards */
+  --text-dark: #343a40; /* General dark text */
+  --text-medium: #6c757d; /* Subheading text */
+  --list-item-bg: #ffffff; /* List item background is white/transparent */
+  --list-item-hover-bg: #f5f5f5; /* Very light gray for subtle hover effect */
+
+  /* Dot Colors as seen in the image */
+  --dot-blue: #40a0ff;
+  --dot-light-green: #72c372;
+  --dot-dark-green: #38a538;
+
+  --border-radius-main: 15px;
+  --border-radius-item: 10px;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -42,6 +63,7 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Open Sans", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --scroll-padding-top: 80px;
 }
 
 *,
@@ -60,7 +82,10 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
-
+html {
+  /* This prevents content from extending beyond the viewport width. */
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -70,6 +95,8 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 [tabindex="-1"]:focus {
@@ -12239,4 +12266,379 @@ pre .code {
 .about-img-holder img {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
+}
+
+/* Section Titles */
+.work-title {
+  color: #695aa6;
+}
+
+.work-subtitle {
+  color: #6c757d;
+}
+
+/* Timeline Line */
+.timeline-line {
+  position: absolute;
+  left: 62px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #695aa6;
+}
+
+/* Timeline Icon */
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 12px;
+  top: 0;
+  background-color: #695aa6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timeline Content */
+.timeline-content {
+  margin-left: 60px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(145deg, #ffffff, #e9ecef);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Job Titles */
+.job-title {
+  color: #212529;
+}
+
+/* Company Name */
+.company-name {
+  color: #695aa6;
+}
+
+/* Job Period Badge */
+.job-period {
+  background-color: #695aa6;
+  color: #fff;
+  float: right;
+  font-weight: 500;
+}
+
+/* Job Description */
+.job-description {
+  color: #495057;
+}
+
+/* Job Points */
+.job-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #212529;
+}
+
+.job-points li {
+  margin-bottom: 0.25rem;
+}
+
+/* Skill Badges */
+.skill-badge {
+  background-color: #d9d2f1;
+  color: #695aa6;
+  margin-right: 0.25rem;
+}
+
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-content {
+  margin-left: 60px;
+  background: #ffffff;
+  border-left: 4px solid #969696;
+}
+
+.impact-subtitle {
+  margin-bottom: 6px;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.section {
+  padding: 80px 0;
+  background-color: var(--section-bg); /* Transparent background */
+  overflow: hidden; /* Hides content that overflows the container */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.col-lg-10 {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* --- Header Text Styling --- */
+/* -------------------------------------------------------------------------- */
+.text-center {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.section-subheading {
+  font-size: 1.05rem;
+  color: var(--text-medium);
+  margin-bottom: 4rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* --- Skills Grid Layout (Single Row - NO Scroll) --- */
+/* -------------------------------------------------------------------------- */
+.skills-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: nowrap; /* Forces all cards into a single row */
+}
+
+/* --- Individual Skill Card --- */
+.skill-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-main);
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  /* Fixed width for single-row layout */
+  flex: 0 0 350px;
+  min-width: 320px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.icon-box {
+  font-size: 1.8rem;
+  color: var(--primary-blue-text);
+  margin-right: 18px;
+  background-color: #e0e9fa; /* Light blue circle background kept */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* --- Skill List Styling --- */
+/* -------------------------------------------------------------------------- */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  margin-bottom: 12px;
+  border-radius: var(--border-radius-item);
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: var(--text-dark);
+
+  /* Main Change: Set background to white/transparent */
+  background-color: var(--list-item-bg);
+
+  transition: background-color 0.2s ease;
+  cursor: default;
+}
+
+.skill-list li:last-child {
+  margin-bottom: 0;
+}
+
+.skill-list li:hover {
+  background-color: var(--list-item-hover-bg);
+}
+
+.skill-dot {
+  font-size: 0.6rem;
+  margin-right: 12px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* --- Specific Dot Colors --- */
+.skill-dot-blue {
+  color: var(--dot-blue);
+}
+
+.skill-dot-light-green {
+  color: var(--dot-light-green);
+}
+
+.skill-dot-dark-green {
+  color: var(--dot-dark-green);
+}
+
+/* -------------------------------------------------------------------------- */
+/* --- Media Queries (Forces Single Row, May Cause Overflow) --- */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 1150px) {
+  /* When screen is narrower than the total width of the three cards,
+     they will overflow. We removed the scrollbar, so content might be inaccessible. */
+  .skills-grid {
+    justify-content: flex-start;
+    padding: 0 15px; /* Add padding to prevent cards touching edges */
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* --- New Skill Box Styling --- */
+/* -------------------------------------------------------------------------- */
+.skill-boxes-grid {
+  display: flex;
+  flex-direction: column; /* Stack the skill boxes vertically */
+  gap: 12px; /* Space between the boxes */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skill-box {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 12px; /* Rounded corners for the entire box */
+  background-color: var(--box-bg);
+  border: 1px solid var(--box-border);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03); /* Very subtle shadow */
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skill-box:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.icon-box-sm {
+  /* Base styling for the small, colored icon in the box */
+  font-size: 1.2rem;
+  margin-right: 15px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Circle shape for the background */
+  color: #ffffff; /* Icon color is white */
+}
+
+.skill-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* --- Specific Box Colors --- */
+
+.skill-box-blue .icon-box-sm {
+  background-color: var(--box-blue); /* Java & Spring Boot */
+}
+
+.skill-box-light-blue .icon-box-sm {
+  background-color: var(--box-light-blue); /* REST APIs & Microservices */
+}
+
+.skill-box-green .icon-box-sm {
+  background-color: var(--box-green); /* MySQL & Database Design */
+}
+
+.social-icon-circle:hover i {
+  color: #fff !important;
+}
+
+.custom-navbar {
+  height: 70px; /* Example height. Use your actual height. */
+}
+
+:root, html {
+  scroll-padding-top: 60px !important;
+  /* Use !important only if absolutely necessary, but try 90px first without it. */
+}
+
+#about {
+  /* Padding is added to the top of the section */
+  padding-top: 90px !important;
+  /* Negative margin pulls the section up so the total page content height remains correct */
+  margin-top: -90px !important;
+}
+
+.section.pt-0 {
+  /* Override Bootstrap's padding-top: 0 */
+  padding-top: 1rem !important;
+}
+.top--4px {
+  position: relative; /* or absolute if needed */
+  top: -2px;
 }

@@ -36,3 +36,29 @@ $('#nav-toggle').click(function(){
     $(this).toggleClass('is-active')
     $('ul.nav').toggleClass('show');
 });
+
+$(document).ready(function() {
+    // Initialize AOS if used
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 1000, once: false, offset: 100 });
+    }
+
+    const $toggleLink = $('#toggleLink');
+    const $collapseEl = $('#morePoints');
+
+    // Toggle text when collapse shows
+    $collapseEl.on('shown.bs.collapse', function() {
+        $toggleLink.text('Show Less');
+    });
+
+    // Toggle text when collapse hides
+    $collapseEl.on('hidden.bs.collapse', function() {
+        $toggleLink.text('Show More');
+    });
+
+    // Optional: click handler for inline link
+    $toggleLink.on('click', function(e) {
+        e.preventDefault();
+        $collapseEl.collapse('toggle');
+    });
+});
