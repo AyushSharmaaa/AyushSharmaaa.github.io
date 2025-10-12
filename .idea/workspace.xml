@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759d0483-377a-4ea7-ac82-a07b04321d4e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style-ayush.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style-ayush.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/scripts-ayush.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/scripts-ayush.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/meyawo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/meyawo.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +66,7 @@
       <workItem from="1760266713055" duration="3941000" />
       <workItem from="1760270848951" duration="1754000" />
       <workItem from="1760273015877" duration="1075000" />
-      <workItem from="1760275182726" duration="4690000" />
+      <workItem from="1760275182726" duration="5330000" />
     </task>
     <servers />
   </component>
