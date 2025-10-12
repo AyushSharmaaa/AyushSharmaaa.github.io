@@ -43,10 +43,10 @@ $(document).ready(function () {
     // Initialize AOS if used
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: isMobile ? 500 : 700,
+            duration: isMobile ? 700 : 800,
             offset: isMobile ? 120 : 100,
             delay: 0,
-            easing: 'ease-out-cubic',
+            easing: 'ease-in-out',
             once: true,
             mirror: false,
             anchorPlacement: isMobile ? 'top-bottom' : 'center-bottom',
