@@ -38,15 +38,19 @@ $('#nav-toggle').click(function () {
 });
 
 $(document).ready(function () {
+
+    let isMobile = window.innerWidth < 768;
     // Initialize AOS if used
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 1000,
+            duration: isMobile ? 500 : 700,
+            offset: isMobile ? 120 : 100,
+            delay: 0,
+            easing: 'ease-out-cubic',
             once: true,
-            offset: 120,
-            easing: 'ease-out',
-            delay: 50,
-            disable: 'mobile'
+            mirror: false,
+            anchorPlacement: isMobile ? 'top-bottom' : 'center-bottom',
+            disable: false
         });
     }
     const $toggleLink = $('#toggleLink');
