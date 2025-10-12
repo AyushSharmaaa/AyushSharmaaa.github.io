@@ -40,9 +40,15 @@ $('#nav-toggle').click(function () {
 $(document).ready(function () {
     // Initialize AOS if used
     if (typeof AOS !== 'undefined') {
-        AOS.init({duration: 1000, once: false, offset: 100});
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 120,
+            easing: 'ease-out',
+            delay: 50,
+            disable: 'mobile'
+        });
     }
-
     const $toggleLink = $('#toggleLink');
     const $collapseEl = $('#morePoints');
 
